@@ -12,8 +12,8 @@ into other bases, for example when you want to convert from binary to decimal.
 
 **The division routine uses the registers CX, DX, SI, DI as one big 64bit register.**
 
-| ----------- |:---:|:---:|:---:|:---:|:------:|:------:|
 |**Byte Nr.** | 7   | 6   | 5   | 4   | 3 - 2  | 1 - 0  |
+| ----------- |:---:|:---:|:---:|:---:|:------:|:------:|
 |**Register** | CH  | CL  | DH  | DL  |   SI   |   DI   |
 
 
@@ -21,7 +21,7 @@ The whole thing works like this:
 
 (CX DX SI DI) / BL = (CX DX SI DI)   remainder is in AH
 
-For more details lock into the "Div64Bit.asm" file.
+For more details look into the "Div64Bit.asm" file.
 
 **This macro is not optimised for speed. It is optimised for size.**
 
