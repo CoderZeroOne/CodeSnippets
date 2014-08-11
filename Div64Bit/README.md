@@ -16,10 +16,16 @@ into other bases, for example when you want to convert from binary to decimal.
 | ----------- |:---:|:---:|:---:|:---:|:------:|:------:|
 |**Register** | CH  | CL  | DH  | DL  |   SI   |   DI   |
 
-
 The whole thing works like this:
+```x86asm
+Input:      cx:dx:si:di = 64bit Dividend
+                     bl =  8bit Divisor
+Output:     cx:dx:si:di = 64bit Quotient
+                     ah =  8bit Remainder
 
-(CX DX SI DI) / BL = (CX DX SI DI)   remainder is in AH
+Caller-save registers: bh, flags
+Callee-save registers: All other registers, except the registers used for output.
+```
 
 For more details look into the "Div64Bit.asm" file.
 
